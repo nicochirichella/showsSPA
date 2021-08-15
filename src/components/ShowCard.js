@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 import "./ShowCard.css";
 import noImage from "../resources/noImage.jpeg";
 
@@ -10,6 +10,7 @@ export default class ShowCard extends Component {
     super();
     console.log(props);
     this.state = {
+      id: props.show ? props.show.id : null,
       title: props.show ? props.show.name : "",
       shortDesc:
         props.show && props.show.summary
@@ -31,6 +32,10 @@ export default class ShowCard extends Component {
     return shortDesc;
   }
 
+  seeShowFullPage() {
+
+  }
+
   render() {
     return (
       <div className="Card">
@@ -43,7 +48,7 @@ export default class ShowCard extends Component {
           />
           <Card.Body>
             <Card.Text>{this.state.shortDesc}</Card.Text>
-            <Button variant="primary">See more</Button>
+            <Link to={"/shows/"+this.state.id} className="btn btn-primary">See more</Link>
           </Card.Body>
         </Card>
       </div>
