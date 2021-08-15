@@ -39,18 +39,20 @@ export default class ShowCard extends Component {
   render() {
     return (
       <div className="Card">
-        <Card style={{ width: "18rem" }}>
-          <Card.Title>{this.state.title}</Card.Title>
-          <Card.Img
-            className="img"
-            variant="top"
-            src={this.state.minImageUrl}
-          />
-          <Card.Body>
-            <Card.Text>{this.state.shortDesc}</Card.Text>
-            <Link to={"/shows/"+this.state.id} className="btn btn-primary">See more</Link>
-          </Card.Body>
-        </Card>
+        <a href={"#/shows/"+this.state.id}>
+          <Card style={{ width: "18rem" }} >
+            <Card.Title>{this.state.title}</Card.Title>
+            <Card.Img
+              className="img"
+              variant="top"
+              src={this.state.minImageUrl}
+            />
+            <Card.Body>
+              <Card.Text>{this.state.shortDesc}</Card.Text>
+              <Link to={"/shows/"+this.state.id} className="btn btn-primary">See more</Link>
+            </Card.Body>
+          </Card>
+        </a>
       </div>
     );
   }
