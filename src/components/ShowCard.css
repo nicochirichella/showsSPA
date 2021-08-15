@@ -23,3 +23,13 @@
   flex-wrap: nowrap;
   align-items: center;
 }
+
+.card-text {
+  width: 250px;
+  height: 100px;
+  font-size: medium;
+}
+
+.card-body {
+  height: 180px;
+}
