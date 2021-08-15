@@ -18,7 +18,7 @@ export default class Shows extends Component {
       this.dataReturned = true;
       this.setState({ shows: showsParseResponsed });
     } catch (e) {
-      console.log(e);
+      console.log('Fetching data failure: ', e);
     }
   }
 
@@ -47,7 +47,6 @@ export default class Shows extends Component {
         ) : (
           <div>
             <h1>Cargando</h1>
-            <ShowCard></ShowCard>{" "}
           </div>
         )}
       </div>
