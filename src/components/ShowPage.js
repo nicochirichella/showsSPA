@@ -28,16 +28,14 @@ export default class ShowPage extends Component {
   }
 
   render() {
-    console.log(this.state.shows);
+    console.log(this.state.showInfo);
     return (
       <div>
         {this.dataReturned ? (
           <div>
-            <ShowCard
-                show=""
-                score=""
-                key={1}
-            />
+              <h1>{this.state.showInfo.name}</h1>
+              <img src={this.state.showInfo.image.original}></img>
+              <h3>{this.state.showInfo.summary}</h3>
           </div>
         ) : (
           <div>
